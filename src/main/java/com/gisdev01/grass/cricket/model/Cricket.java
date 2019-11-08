@@ -9,11 +9,17 @@ public class Cricket implements Serializable {
     private String md5;
     private String comments;
 
+    private final String KEY_PREFIX = "CRICKET:";
+
     public Cricket(String id, String name,
                    String md5) {
         this.id = id;
         this.name = name;
         this.md5 = md5;
+    }
+
+    public String getKey() {
+        return KEY_PREFIX+id;
     }
 
     public String getId() {
